@@ -54,11 +54,11 @@ class MetropolisDemo():
 		self.history = []
 		self.x = (0., 0.)
 
-	def run(self, steps = 100):
+	def run(self, steps = 100, jump_size = 0.5):
 		current_prob = prob(self.x)
 		for i in range(steps):
 			# Generate a proposal and compute its probability
-			x_star = propose(self.x, 0.5)
+			x_star = propose(self.x, jump_size)
 			prob_star = prob(x_star)
 			
 			# Decide whether to accept the proposal
